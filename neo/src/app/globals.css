@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-navy antialiased;
+  }
+
+  /* Scrollbar discrète */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-navy;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ocean/60 rounded-full;
+  }
+}
+
+@layer components {
+  /* Barre de progression scroll */
+  #scroll-progress {
+    @apply fixed top-0 left-0 h-0.5 bg-ocean z-[100] transition-all;
+  }
+}
