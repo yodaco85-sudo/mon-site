@@ -1,11 +1,17 @@
+"use client";
+
+import { ScrollReveal } from "./ScrollReveal";
+import { Card, CardContent } from "./ui/card";
+import { Utensils, Home, Anchor } from "lucide-react";
+
 const projects = [
   {
     tag: "Site vitrine",
     title: "Nomade Tasty",
     subtitle: "Traiteur à Bellevigny, Vendée",
-    color: "bg-amber-50 border-amber-200",
-    tagColor: "text-amber-700 bg-amber-100",
-    emoji: "🍽️",
+    icon: Utensils,
+    iconColor: "text-orange-500 bg-orange-500/10",
+    tagColor: "text-orange-600 bg-orange-100 dark:bg-orange-900/30",
     context:
       "Traiteur local avec d'excellents avis clients, mais sans site pour les mettre en valeur ni faciliter les demandes de devis.",
     done: [
@@ -20,9 +26,9 @@ const projects = [
     tag: "Site expert",
     title: "Anne-Cécile Collet",
     subtitle: "Immobilier de prestige, Côte d'Azur",
-    color: "bg-slate-50 border-slate-200",
-    tagColor: "text-slate-700 bg-slate-100",
-    emoji: "🏡",
+    icon: Home,
+    iconColor: "text-slate-500 bg-slate-500/10",
+    tagColor: "text-slate-600 bg-slate-100 dark:bg-slate-800",
     context:
       "Conseillère immobilière haut de gamme avec 20+ ans d'expérience, besoin d'un site à la hauteur de son positionnement.",
     done: [
@@ -36,10 +42,10 @@ const projects = [
   {
     tag: "Exemple type mer",
     title: "Armement côtier",
-    subtitle: "6–9 navires, pêche côtière (exemple de projet)",
-    color: "bg-blue-50 border-blue-200",
-    tagColor: "text-ocean bg-blue-100",
-    emoji: "⚓",
+    subtitle: "6–9 navires, pêche côtière",
+    icon: Anchor,
+    iconColor: "text-accent bg-accent/10",
+    tagColor: "text-accent bg-accent/10",
     context:
       "Armement avec des charges en hausse, besoin de montrer le sérieux de la flotte, ses engagements, et de faciliter les contacts partenaires.",
     done: [
@@ -54,58 +60,82 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-cream">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <span className="text-ocean text-sm font-semibold uppercase tracking-widest">
-            Réalisations BESMARA
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy mt-3">
-            Ce qu&apos;on a déjà construit
-          </h2>
-          <p className="text-navy/60 mt-4 max-w-xl mx-auto">
-            Des projets réels, pas des mockups. Avec de vraies contraintes et
-            de vrais bénéfices.
-          </p>
-        </div>
+    <section id="projects" className="section-padding bg-background">
+      <div className="container-custom">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              Réalisations BESMARA
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mt-3 mb-6">
+              Ce qu&apos;on a déjà construit
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Des projets réels, pas des mockups. Avec de vraies contraintes et
+              de vrais bénéfices.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="space-y-6">
-          {projects.map((p) => (
-            <div
-              key={p.title}
-              className={`rounded-2xl border p-8 ${p.color} flex flex-col md:flex-row gap-6`}
-            >
-              <div className="text-5xl flex-shrink-0">{p.emoji}</div>
-
-              <div className="flex-grow">
-                <div className="flex flex-wrap items-start gap-3 mb-2">
-                  <span
-                    className={`text-xs font-semibold px-2.5 py-1 rounded-full ${p.tagColor}`}
-                  >
-                    {p.tag}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl font-bold text-navy">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-navy/50">{p.subtitle}</p>
+          {projects.map((p, index) => (
+            <ScrollReveal key={p.title} delay={index * 100}>
+              <Card className="shadow-soft card-hover border border-border/50 overflow-hidden">
+                <CardContent className="p-0 flex flex-col md:flex-row">
+                  {/* Icon side */}
+                  <div className={`p-8 md:w-48 flex items-center justify-center flex-shrink-0 ${p.iconColor}`}>
+                    <p.icon className="w-16 h-16 opacity-80" />
                   </div>
-                </div>
 
-                <p className="text-sm text-navy/60 mb-4 italic">{p.context}</p>
+                  {/* Content side */}
+                  <div className="p-8 flex-grow">
+                    <div className="flex flex-wrap items-start gap-4 mb-4">
+                      <div>
+                        <h3 className="font-display text-2xl font-bold mb-1">
+                          {p.title}
+                        </h3>
+                        <p className="text-muted-foreground">{p.subtitle}</p>
+                      </div>
+                      <span
+                        className={`text-xs font-semibold px-3 py-1 rounded-full md:ml-auto ${p.tagColor}`}
+                      >
+                        {p.tag}
+                      </span>
+                    </div>
 
-                <ul className="space-y-1 mb-4">
-                  {p.done.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-navy/80">
-                      <span className="text-ocean font-bold">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                    <p className="text-foreground/80 mb-6 italic border-l-2 border-accent/30 pl-4 py-1">
+                      &quot;{p.context}&quot;
+                    </p>
 
-                <p className="text-sm font-semibold text-navy">→ {p.benefit}</p>
-              </div>
-            </div>
+                    <div className="grid md:grid-cols-2 gap-4 mb-6">
+                      <ul className="space-y-2">
+                        {p.done.slice(0, 2).map((item) => (
+                          <li key={item} className="flex gap-2 text-sm text-foreground/90">
+                            <span className="text-accent font-bold">✓</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <ul className="space-y-2">
+                        {p.done.slice(2).map((item) => (
+                          <li key={item} className="flex gap-2 text-sm text-foreground/90">
+                            <span className="text-accent font-bold">✓</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-accent/5 rounded-lg p-4 border border-accent/10">
+                      <p className="text-sm font-semibold text-foreground">
+                        <span className="text-accent mr-2">→</span>
+                        Bénéfice : <span className="font-normal text-muted-foreground">{p.benefit}</span>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
           ))}
         </div>
       </div>

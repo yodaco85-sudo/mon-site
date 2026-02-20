@@ -1,3 +1,9 @@
+"use client";
+
+import { ScrollReveal } from "./ScrollReveal";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
+
 const steps = [
   {
     n: "01",
@@ -28,64 +34,73 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <span className="text-ocean text-sm font-semibold uppercase tracking-widest">
-            Comment on travaille
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy mt-3">
-            Un process simple, sans surprise
-          </h2>
-          <p className="text-navy/60 mt-4 max-w-xl mx-auto">
-            Du premier appel à la mise en ligne, vous savez à chaque étape où
-            on en est.
-          </p>
-        </div>
+    <section id="process" className="section-padding bg-muted wave-separator">
+      <div className="container-custom">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              Comment on travaille
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mt-3 mb-6">
+              Un process simple, sans surprise
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Du premier appel à la mise en ligne, vous savez à chaque étape où
+              on en est.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           {/* Ligne verticale */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-navy/10 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-0.5 bg-border -translate-x-1/2" />
 
-          <div className="space-y-8">
+          <div className="space-y-12">
             {steps.map((step, i) => (
-              <div
-                key={step.n}
-                className={`flex flex-col md:flex-row gap-6 md:gap-12 items-center ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
+              <ScrollReveal key={step.n} delay={i * 100}>
                 <div
-                  className={`flex-1 ${i % 2 !== 0 ? "md:text-left" : ""}`}
+                  className={`flex flex-col md:flex-row gap-6 md:gap-12 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                 >
-                  <div className="bg-cream rounded-2xl p-6 border border-navy/5 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="font-display text-lg font-bold text-navy mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-navy/60 text-sm leading-relaxed">
-                      {step.desc}
-                    </p>
+                  <div className={`flex-1 w-full ${i % 2 !== 0 ? "md:text-right" : "md:text-left"}`}>
+                    <div className={`bg-card rounded-2xl p-8 border border-border/50 shadow-soft card-hover relative
+                      ${i % 2 === 0 ? "md:mr-4" : "md:ml-4"}
+                    `}>
+                      {/* Flèche pointant vers le centre (desktop) */}
+                      <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-card border-border/50 rotate-45
+                        ${i % 2 === 0 ? "border-t border-r -right-2" : "border-b border-l -left-2"}
+                      `} />
+
+                      <h3 className="font-display text-xl font-bold mb-3">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-ocean flex items-center justify-center shadow-md shadow-ocean/30 z-10">
-                  <span className="text-white font-bold text-sm">{step.n}</span>
-                </div>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-accent text-primary-foreground flex items-center justify-center shadow-glow z-10 font-display font-bold text-xl border-4 border-muted relative">
+                    {step.n}
+                  </div>
 
-                <div className="flex-1 hidden md:block" />
-              </div>
+                  <div className="flex-1 w-full hidden md:block" />
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
-        <div className="mt-14 text-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-ocean hover:bg-ocean-light text-white font-semibold rounded-xl transition-all shadow-lg shadow-ocean/20 hover:-translate-y-0.5"
-          >
-            Commencer par l&apos;appel gratuit →
-          </a>
-        </div>
+        <ScrollReveal delay={400}>
+          <div className="mt-20 text-center">
+            <Button variant="hero" size="xl" asChild>
+              <a href="#contact">
+                Commencer par l&apos;appel gratuit
+                <ArrowRight className="ml-2" />
+              </a>
+            </Button>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

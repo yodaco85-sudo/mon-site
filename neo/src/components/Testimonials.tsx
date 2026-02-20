@@ -1,3 +1,9 @@
+"use client";
+
+import { ScrollReveal } from "./ScrollReveal";
+import { Quote } from "lucide-react";
+import { Card, CardContent } from "./ui/card";
+
 const feedbacks = [
   {
     quote:
@@ -15,51 +21,58 @@ const feedbacks = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-navy">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <span className="text-ocean text-sm font-semibold uppercase tracking-widest">
-            Ce qu&apos;on dit de BESMARA
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-3">
-            Des retours concrets
-          </h2>
-          <p className="text-white/50 mt-4 max-w-md mx-auto text-sm">
-            On préfère montrer peu et vrai plutôt que beaucoup et inventé.
-          </p>
-        </div>
+    <section id="testimonials" className="section-padding bg-background relative overflow-hidden">
+      <div className="absolute inset-0 network-pattern opacity-30" />
+      <div className="container-custom relative z-10">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">
+              Ce qu&apos;on dit de BESMARA
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mt-3 mb-6">
+              Des retours concrets
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-md mx-auto text-lg border-b border-accent/20 pb-4 inline-block">
+              On préfère montrer peu et <span className="text-accent font-semibold">vrai</span> plutôt que beaucoup et inventé.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {feedbacks.map((f) => (
-            <div
-              key={f.author}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8"
-            >
-              <p className="text-4xl text-ocean/40 font-display leading-none mb-4">
-                &ldquo;
-              </p>
-              <p className="text-white/80 leading-relaxed italic mb-6">
-                {f.quote}
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-ocean/30 flex items-center justify-center text-white font-bold">
-                  {f.author.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-white font-medium text-sm">{f.author}</p>
-                  <p className="text-white/40 text-xs">{f.role}</p>
-                </div>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {feedbacks.map((f, index) => (
+            <ScrollReveal key={index} delay={index * 100}>
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50 shadow-soft h-full flex flex-col card-hover">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <Quote className="w-10 h-10 text-accent/30 mb-6" />
+                  <p className="text-foreground/90 leading-relaxed italic mb-8 flex-grow text-lg">
+                    &quot;{f.quote}&quot;
+                  </p>
+                  <div className="flex items-center gap-4 pt-6 border-t border-border/50">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-display font-bold text-xl">
+                      {f.author.split(' ').pop()?.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-display font-bold text-foreground">{f.author}</p>
+                      <p className="text-muted-foreground text-sm flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-accent inline-block" />
+                        {f.role}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
           ))}
         </div>
 
-        <p className="text-center text-white/40 text-sm mt-10">
-          Vous voulez voir ce que BESMARA peut faire pour votre activité ?{" "}
-          <a href="#contact" className="text-gold hover:text-gold-light underline underline-offset-4">
-            On en parle en 20 minutes.
-          </a>
-        </p>
+        <ScrollReveal delay={300}>
+          <p className="text-center text-muted-foreground text-sm mt-16 max-w-md mx-auto bg-card rounded-full py-3 px-6 shadow-sm border border-border/50">
+            Vous voulez voir ce que BESMARA peut faire pour votre activité ?{" "}
+            <a href="#contact" className="text-accent hover:text-accent-secondary font-semibold transition-colors">
+              On en parle en 20 minutes.
+            </a>
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );

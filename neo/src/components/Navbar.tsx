@@ -2,98 +2,104 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 
-const links = [
-  { label: "À propos", href: "#about" },
-  { label: "Offres", href: "#offers" },
-  { label: "Projets", href: "#projects" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+const navLinks = [
+  { name: "Accueil", path: "/" },
+  { name: "À propos", path: "/about" },
+  { name: "Solutions", path: "/services" },
+  { name: "Projets", path: "/#projects" },
 ];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-navy/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-primary/95 backdrop-blur-md shadow-strong py-3"
+          : "bg-transparent py-5"
+        }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2.5" aria-label="BESMARA - Accueil">
-          <Image
-            src="/brand/logone.jpg"
-            alt="BESMARA monogramme"
-            width={36}
-            height={36}
-            className="rounded-sm"
-          />
-          <span className="font-display text-xl font-bold text-white tracking-wide">
-            BESMARA
-          </span>
-        </a>
+      <div className="container-custom">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="#" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-lg bg-accent/20 blur-sm group-hover:bg-accent/40 transition-all duration-300" />
+              <Image
+                src="/brand/logone.jpg"
+                alt="BESMARA monogramme"
+                width={36}
+                height={36}
+                className="rounded-md relative border border-white/10"
+              />
+            </div>
+            <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+              BESMARA
+            </span>
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-white/80 hover:text-gold transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            className="ml-2 px-4 py-2 bg-ocean hover:bg-ocean-light text-white text-sm font-medium rounded-lg transition-colors"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.path}
+                href={link.path}
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-primary-foreground/70 hover:text-accent hover:bg-primary-foreground/5"
+              >
+                {link.name}
+              </a>
+            ))}
+            <Button variant="accent" size="sm" className="ml-4" asChild>
+              <a href="#contact">Contact</a>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-primary-foreground p-2 hover:text-accent transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            Appel gratuit
-          </a>
-        </nav>
-
-        {/* Mobile burger */}
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${open ? "opacity-0" : ""}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`} />
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-navy/98 px-4 pb-4">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-white/80 hover:text-gold border-b border-white/10 last:border-0"
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="block mt-3 text-center px-4 py-2 bg-ocean text-white font-medium rounded-lg"
-          >
-            Appel gratuit
-          </a>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-primary-foreground/10 pt-4 animate-fade-in">
+            <div className="flex flex-col gap-2 bg-primary p-4 rounded-xl border border-primary-foreground/10 shadow-lg">
+              {navLinks.map((link) => (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-lg text-sm font-medium transition-all text-primary-foreground/90 hover:text-accent hover:bg-primary-foreground/10"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <Button variant="accent" className="mt-4 w-full" asChild>
+                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  Contact
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 }

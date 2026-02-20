@@ -284,32 +284,49 @@
 
       if (!allValid) return;
 
-      // Simulated submit
+      // Formspree AJAX submit
       const btn = $('button[type="submit"]', form);
       if (btn) {
         const original = btn.textContent;
         btn.textContent = 'Envoi en cours...';
         btn.disabled = true;
 
-        setTimeout(() => {
+        const formData = new FormData(form);
+        const action = form.getAttribute('action') || 'https://formspree.io/f/VOTRE_ID_FORMSPREE';
+
+        fetch(action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
           btn.textContent = original;
           btn.disabled = false;
           form.reset();
-
-          // Show success
-          const success = form.nextElementSibling;
-          if (success && success.classList.contains('form-success')) {
-            form.style.display = 'none';
-            success.classList.add('active');
-            setTimeout(() => {
-              form.style.display = '';
-              success.classList.remove('active');
+          
+          if (response.ok) {
+            // Show success
+            const success = form.nextElementSibling;
+            if (success && success.classList.contains('form-success')) {
+              form.style.display = 'none';
+              success.classList.add('active');
+              setTimeout(() => {
+                form.style.display = '';
+                success.classList.remove('active');
+                closeModal();
+              }, 3000);
+            } else {
               closeModal();
-            }, 3000);
+            }
           } else {
-            closeModal();
+            alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
           }
-        }, 1500);
+        }).catch(error => {
+          btn.textContent = original;
+          btn.disabled = false;
+          alert("Une erreur de réseau est survenue. Veuillez vérifier votre connexion.");
+        });
       }
     });
   });
