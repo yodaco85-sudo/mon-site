@@ -272,6 +272,15 @@
   .animate-wave2 { animation: wave2 10s linear infinite; }
   .animate-wave3 { animation: wave3 12s linear infinite; }
 
+  /* Métal poli — rayon de lumière qui balaie */
+  @keyframes metal-sheen {
+    0%, 25%  { transform: translateX(-160%) skewX(-18deg); }
+    65%, 100% { transform: translateX(280%) skewX(-18deg); }
+  }
+  .animate-metal-sheen {
+    animation: metal-sheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
   /* Stagger animations */
   .stagger-1 { animation-delay: 0.1s; }
   .stagger-2 { animation-delay: 0.2s; }

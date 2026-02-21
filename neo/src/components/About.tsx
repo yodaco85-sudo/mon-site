@@ -40,7 +40,7 @@ export default function About() {
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mt-3 mb-6">
                 BESMARA,{" "}
-                <span className="text-accent">du chalut au code</span>
+                <span className="text-accent">de la barre à la RAM</span>
               </h2>
             </ScrollReveal>
 
@@ -49,7 +49,7 @@ export default function About() {
                 <p>
                   BESMARA est fondée par{" "}
                   <strong className="text-foreground">Yoann</strong>, ancien patron et chef mécanicien
-                  avec <strong className="text-foreground">12 ans de mer</strong>.
+                  avec <strong className="text-foreground">22 ans en mer</strong>.
                   Piloter un bateau, gérer un équipage, jongler avec la météo, les quotas,
                   le gasoil et la paperasse administrative : on sait ce que &quot;débordé&quot;
                   veut dire en vrai.

@@ -11,20 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-xl bg-accent/20 blur-md group-hover:bg-accent/40 transition-all duration-300" />
-                <Image
-                  src="/brand/logone.jpg"
-                  alt="BESMARA monogramme"
-                  width={40}
-                  height={40}
-                  className="rounded-lg relative border border-white/10"
-                />
-              </div>
-              <span className="font-display font-bold text-2xl tracking-tight text-white group-hover:text-gold transition-colors">
-                BESMARA
-              </span>
+            <Link href="/" className="inline-flex mb-6 group">
+              <Image
+                src="/brand/besmara-detoure.png"
+                alt="BESMARA"
+                width={200}
+                height={85}
+                className="transition-opacity group-hover:opacity-80"
+              />
             </Link>
             <p className="text-primary-foreground/70 max-w-sm mb-6 leading-relaxed">
               Yoann accompagne les professionnels de la pêche, de l&apos;aquaculture

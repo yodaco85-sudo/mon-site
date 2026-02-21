@@ -35,20 +35,14 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-lg bg-accent/20 blur-sm group-hover:bg-accent/40 transition-all duration-300" />
-              <Image
-                src="/brand/logone.jpg"
-                alt="BESMARA monogramme"
-                width={36}
-                height={36}
-                className="rounded-md relative border border-white/10"
-              />
-            </div>
-            <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
-              BESMARA
-            </span>
+          <Link href="#" className="group flex items-center">
+            <Image
+              src="/brand/logone3.png"
+              alt="BESMARA"
+              width={42}
+              height={48}
+              className="transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}

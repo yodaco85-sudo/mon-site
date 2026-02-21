@@ -61,45 +61,37 @@ function AnimatedWaves() {
   );
 }
 
-// Silhouette chalutier SVG — animée en float CSS
-function BoatSilhouette() {
+// Logo BESMARA avec effet métal poli — rayon de lumière en boucle
+function BesmaraLogo() {
   return (
-    <div className="animate-float" aria-hidden="true">
-      {/* AIS data — texte monospace décoratif */}
-      <div className="text-center mb-3">
-        <span className="font-mono text-xs text-accent/60 tracking-widest select-none">
-          47°N 3°W · CAP 235° · 12 kn · AIS ●
-        </span>
-      </div>
+    <div className="relative inline-block select-none overflow-hidden" style={{ borderRadius: "4px" }}>
+      {/* Logo principal */}
+      <Image
+        src="/brand/logofinal4.png"
+        alt="BESMARA — logo trident"
+        width={460}
+        height={197}
+        priority
+      />
 
-      {/* Bateau SVG */}
+      {/* Rayon de lumière — masqué par la forme du logo */}
       <div
-        className="relative"
-        style={{ filter: "drop-shadow(0 4px 24px hsl(199 89% 48% / 0.3))" }}
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        style={{
+          WebkitMaskImage: "url('/brand/logofinal4.png')",
+          maskImage: "url('/brand/logofinal4.png')",
+          WebkitMaskSize: "100% 100%",
+          maskSize: "100% 100%",
+        }}
       >
-        <Image
-          src="/boat.svg"
-          alt="Silhouette de chalutier"
-          width={320}
-          height={135}
-          className="opacity-80"
-          style={{ color: "hsl(199 89% 70%)" }}
-          priority={false}
+        <div
+          className="absolute top-0 bottom-0 animate-metal-sheen"
+          style={{
+            width: "40%",
+            background: "linear-gradient(105deg, transparent 0%, rgba(255,240,180,0.2) 30%, rgba(255,255,255,0.8) 50%, rgba(255,240,180,0.2) 70%, transparent 100%)",
+          }}
         />
-      </div>
-
-      {/* Ligne de flottaison animée */}
-      <div className="mt-1 flex items-center justify-center gap-1 opacity-40">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div
-            key={i}
-            className="h-0.5 rounded-full bg-accent"
-            style={{
-              width: i % 3 === 0 ? "16px" : "8px",
-              animationDelay: `${i * 0.15}s`,
-            }}
-          />
-        ))}
       </div>
     </div>
   );
@@ -132,9 +124,19 @@ export default function Hero() {
               </span>
             </ScrollReveal>
 
+            {/* Logo mobile — visible uniquement avant lg (desktop montre la colonne droite) */}
+            <div className="flex justify-center lg:hidden mb-5">
+              <Image
+                src="/brand/logofinal4.png"
+                alt="BESMARA"
+                width={300}
+                height={128}
+                priority
+              />
+            </div>
+
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6">
-                <span className="text-gold">BESMARA</span> —{" "}
                 IA &amp; Automatisation pour la mer et les TPE
               </h1>
             </ScrollReveal>
@@ -147,7 +149,7 @@ export default function Hero() {
               <p className="text-sm text-primary-foreground/60 mb-10 mx-auto lg:mx-0 max-w-xl">
                 Fondé par{" "}
                 <strong className="text-primary-foreground/90">Yoann</strong>,
-                ex-patron et chef mécanicien — 12 ans de mer.
+                ex-patron et chef mécanicien — 22 ans dans la pêche.
               </p>
             </ScrollReveal>
 
@@ -169,7 +171,7 @@ export default function Hero() {
             <ScrollReveal delay={400}>
               <div className="mt-12 grid grid-cols-3 gap-4 max-w-sm mx-auto lg:mx-0">
                 {[
-                  { n: "12 ans", label: "Expérience mer" },
+                  { n: "22 ans", label: "Expérience mer" },
                   { n: "100%", label: "Mobile-first" },
                   { n: "20 min", label: "Appel offert" },
                 ].map((s) => (
@@ -182,26 +184,9 @@ export default function Hero() {
             </ScrollReveal>
           </div>
 
-          {/* Colonne droite — Bateau animé (desktop) */}
-          <div className="hidden lg:flex flex-col items-center justify-center gap-6">
-            <ScrollReveal delay={200}>
-              <BoatSilhouette />
-            </ScrollReveal>
-
-            {/* Logo BESMARA en dessous du bateau */}
-            <ScrollReveal delay={350}>
-              <div className="relative">
-                <div className="absolute inset-0 rounded-2xl bg-accent/20 blur-3xl scale-110 animate-pulse-glow" />
-                <Image
-                  src="/brand/logofinal.jpg"
-                  alt="BESMARA — Logo complet or sur fond marine"
-                  width={220}
-                  height={220}
-                  className="relative rounded-2xl shadow-strong border border-white/10"
-                  priority
-                />
-              </div>
-            </ScrollReveal>
+          {/* Colonne droite — Logo BESMARA (desktop) */}
+          <div className="hidden lg:flex flex-col items-center justify-center">
+            <BesmaraLogo />
           </div>
         </div>
       </div>

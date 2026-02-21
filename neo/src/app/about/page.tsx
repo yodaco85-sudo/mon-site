@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "2009–2021", icon: Anchor, title: "12 ans de mer", desc: "Patron de pêche, chef mécanicien. Bretagne, Normandie, côtes atlantiques. Gestion d'équipage, maintenance moteur, navigation hauturière." },
-  { year: "2021–2023", icon: Cpu, title: "Reconversion numérique", desc: "Formation au développement web et à l'automatisation. Découverte de n8n, de l'IA appliquée, des APIs. Le maritime reste le fil rouge." },
-  { year: "2023–", icon: Leaf, title: "BESMARA", desc: "Création de BESMARA pour accompagner les pros de la mer et les TPE. Des solutions concrètes, sans jargon, ancrées dans la réalité du terrain." },
+  { year: "1999–2021", icon: Anchor, title: "22ans de mer", desc: "Patron de pêche, chef mécanicien. Bretagne, Normandie, côtes atlantiques. Gestion d'équipage, maintenance moteur, navigation hauturière." },
+  { year: "2022–2024", icon: Cpu, title: "Reconversion numérique", desc: "Formation au développement web et à l'automatisation. Découverte de n8n, de l'IA appliquée, des APIs. Le maritime reste le fil rouge." },
+  { year: "2025–", icon: Leaf, title: "BESMARA", desc: "Création de BESMARA pour accompagner les pros de la mer et les TPE. Des solutions concrètes, sans jargon, ancrées dans la réalité du terrain." },
 ];
 
 const values = [
@@ -43,7 +43,7 @@ export default function AboutPage() {
                   </span>
                   <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
                     Du chalut au code —{" "}
-                    <span className="text-gold">12 ans de mer</span>
+                    <span className="text-gold">22 ans en mer</span>
                   </h1>
                   <p className="text-primary-foreground/75 text-lg leading-relaxed">
                     BESMARA est fondée par Yoann, ancien patron et chef mécanicien.
