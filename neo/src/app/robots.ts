@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/mentions-legales",
     },
-    sitemap: "https://besmara.fr/sitemap.xml",
+    sitemap: "https://besmara.lilas.pro/sitemap.xml",
   };
 }

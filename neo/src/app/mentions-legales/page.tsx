@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
             <section>
               <h2 className="font-display text-2xl font-bold text-foreground mb-3">Éditeur du site</h2>
               <p>
-                Le présent site <strong className="text-foreground">besmara.fr</strong> est édité par :
+                Le présent site <strong className="text-foreground">besmara.lilas.pro</strong> est édité par :
               </p>
               <ul className="mt-3 space-y-1 text-sm">
                 <li><strong className="text-foreground">Yoann BESMARA</strong> — Consultant IA & Automatisation</li>

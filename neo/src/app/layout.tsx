@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://besmara.fr"),
+  metadataBase: new URL("https://besmara.lilas.pro"),
   title: {
     default: "BESMARA | IA & Automatisation pour la pêche, l'aquaculture et les TPE",
     template: "%s | BESMARA",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "BESMARA | IA & Automatisation Maritime",
     description:
       "Sites vitrines et automatisation pour TPE, artisans et acteurs de la mer.",
-    url: "https://besmara.fr",
+    url: "https://besmara.lilas.pro",
     siteName: "BESMARA",
     images: [
       {
@@ -80,9 +80,9 @@ export default function RootLayout({
                   name: "BESMARA",
                   description:
                     "Consultant IA et automatisation pour la pêche, l'aquaculture et les TPE.",
-                  url: "https://besmara.fr",
-                  logo: "https://besmara.fr/brand/logofinal4.png",
-                  image: "https://besmara.fr/og-image.png",
+                  url: "https://besmara.lilas.pro",
+                  logo: "https://besmara.lilas.pro/brand/logofinal4.png",
+                  image: "https://besmara.lilas.pro/og-image.png",
                   email: "besmara.contact@lilas.pro",
                   telephone: "+33252431166",
                   address: {
@@ -102,7 +102,7 @@ export default function RootLayout({
                 {
                   "@type": "WebSite",
                   name: "BESMARA",
-                  url: "https://besmara.fr",
+                  url: "https://besmara.lilas.pro",
                 },
                 {
                   "@type": "Service",
