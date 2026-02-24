@@ -16,6 +16,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "6Zy8-enVfMo5F8ADBJsAg_GJYLbefA8V2AFHE45z32Y",
+  },
   metadataBase: new URL("https://besmara.lilas.pro"),
   title: {
     default: "BESMARA | IA & Automatisation pour la pêche, l'aquaculture et les TPE",
