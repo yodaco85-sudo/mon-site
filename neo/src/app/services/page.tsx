@@ -92,7 +92,7 @@ export default function ServicesPage() {
                 Les solutions BESMARA
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-                Trois offres,{" "}
+                Site vitrine, automatisation &amp; IA maritime —{" "}
                 <span className="text-gold">des résultats concrets</span>
               </h1>
               <p className="text-primary-foreground/75 text-lg leading-relaxed">

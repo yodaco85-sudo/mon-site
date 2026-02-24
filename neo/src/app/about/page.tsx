@@ -62,6 +62,7 @@ export default function AboutPage() {
                       alt="Yoann, fondateur BESMARA - Ancien patron de pêche et chef mécanicien"
                       width={400}
                       height={400}
+                      priority
                       className="relative rounded-2xl shadow-strong border border-white/10 object-cover"
                     />
                   </div>

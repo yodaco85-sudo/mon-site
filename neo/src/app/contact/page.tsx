@@ -56,7 +56,7 @@ export default function ContactPage() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL!, {
+      const response = await fetch(`/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 Contact
               </span>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-                On se parle ?
+                Contactez BESMARA — appel gratuit de 20 min
               </h1>
               <p className="text-primary-foreground/75 text-lg">
                 20 minutes d&apos;appel gratuit suffisent souvent pour clarifier les choses.

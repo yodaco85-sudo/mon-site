@@ -88,7 +88,7 @@ export default function WhyNow() {
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-accent" />
                 </div>
-                <h4 className="font-display font-bold text-lg mb-2">{item.label}</h4>
+                <h3 className="font-display font-bold text-lg mb-2">{item.label}</h3>
                 <p className="text-primary-foreground/60 text-sm mt-auto">{item.sub}</p>
               </div>
             </ScrollReveal>

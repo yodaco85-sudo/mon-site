@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#" className="group flex items-center">
+          <Link href="/" className="group flex items-center">
             <Image
               src="/brand/logone3.png"
               alt="BESMARA"
