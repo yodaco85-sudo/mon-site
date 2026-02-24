@@ -58,11 +58,11 @@ export default function AboutPage() {
                   <div className="relative">
                     <div className="absolute inset-0 rounded-3xl bg-accent/20 blur-3xl scale-110 animate-pulse-glow" />
                     <Image
-                      src="/brand/logofinal.jpg"
-                      alt="Logo BESMARA"
-                      width={300}
-                      height={300}
-                      className="relative rounded-2xl shadow-strong border border-white/10"
+                      src="/brand/profile.png"
+                      alt="Yoann, fondateur BESMARA - Ancien patron de pêche et chef mécanicien"
+                      width={400}
+                      height={400}
+                      className="relative rounded-2xl shadow-strong border border-white/10 object-cover"
                     />
                   </div>
                 </ScrollReveal>

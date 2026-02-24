@@ -34,10 +34,28 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: brancher sur un endpoint réel (Formspree, n8n webhook, etc.)
-    setSent(true);
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          source: "Landing page",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Échec de l'envoi");
+      }
+
+      setSent(true);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
+      alert("Une erreur est survenue. Veuillez réessayer ou nous contacter directement.");
+    }
   };
 
   if (sent) {

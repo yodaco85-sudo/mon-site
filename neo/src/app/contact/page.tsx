@@ -50,13 +50,30 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate(form);
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    // TODO: brancher sur n8n webhook ou Formspree
-    console.log("Formulaire soumis :", form);
-    setSent(true);
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          source: "Page /contact",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Échec de l'envoi");
+      }
+
+      setSent(true);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
+      alert("Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.");
+    }
   };
 
   if (sent) {

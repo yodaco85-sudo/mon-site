@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { Linkedin, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex mb-6 group">
               <Image
-                src="/brand/besmara-detoure.png"
+                src="/brand/logofinal4.png"
                 alt="BESMARA"
                 width={200}
                 height={85}
@@ -26,7 +26,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/besmaracontact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors text-white"
@@ -35,13 +35,13 @@ export default function Footer() {
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/833411816532209"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors text-white"
-                aria-label="Twitter"
+                aria-label="Facebook"
               >
-                <Twitter size={18} />
+                <Facebook size={18} />
               </a>
             </div>
           </div>
