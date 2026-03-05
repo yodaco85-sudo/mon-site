@@ -13,10 +13,10 @@ const projects = [
     iconColor: "text-orange-500 bg-orange-500/10",
     tagColor: "text-orange-600 bg-orange-100 dark:bg-orange-900/30",
     context:
-      "Traiteur local avec d'excellents avis clients, mais sans site pour les mettre en valeur ni faciliter les demandes de devis.",
+      "Traiteur local, sans site pour se mettre en valeur ni faciliter les demandes de devis.",
     done: [
-      "Structure complète : Accueil, À propos, Services, Galerie, Avis, Contact",
-      "Mise en avant des avis 5 étoiles",
+      "Structure complète : Accueil, À propos, Services, Galerie, Contact",
+      "Mise en avant de vos réalisations",
       "Formulaire de demande de devis",
       "Design chaleureux, mobile-first",
     ],
@@ -35,7 +35,7 @@ const projects = [
       "Positionnement clair : immobilier de prestige – Côte d'Azur",
       "Section biens d'exception",
       "Formulaire d'estimation gratuite en ligne",
-      "Mise en avant note Google, expérience, langues parlées",
+      "Mise en avant de l'expérience et des langues parlées",
     ],
     benefit: "Un site qui inspire confiance dès les 5 premières secondes.",
   },

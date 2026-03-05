@@ -12,7 +12,7 @@ const offers = [
     tagline: "Une présence en ligne claire et professionnelle",
     for: "Traiteurs, agents immo, artisans, pros de la mer…",
     includes: [
-      "Site 3–5 sections (Accueil, À propos, Services, Projets/Avis, Contact)",
+      "Site 3–5 sections (Accueil, À propos, Services, Projets, Contact)",
       "Formulaire de contact ou demande de devis",
       "Intégration réseaux sociaux",
       "Mobile-first, rapide à charger",
@@ -74,8 +74,8 @@ export default function Offers() {
             <ScrollReveal key={offer.name} delay={index * 100}>
               <Card
                 className={`relative h-full flex flex-col border transition-all duration-300 ${offer.highlight
-                    ? "bg-primary border-accent shadow-glow -translate-y-2 scale-[1.02]"
-                    : "bg-card border-border/50 shadow-soft card-hover"
+                  ? "bg-primary border-accent shadow-glow -translate-y-2 scale-[1.02]"
+                  : "bg-card border-border/50 shadow-soft card-hover"
                   }`}
               >
                 {offer.highlight && (
