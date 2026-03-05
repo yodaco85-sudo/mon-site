@@ -78,13 +78,13 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:besmara.contact@lilas.pro"
+                  href="mailto:contact@besmara.fr"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full bg-primary-foreground/5 flex items-center justify-center flex-shrink-0">
                     <Mail size={16} />
                   </div>
-                  besmara.contact@lilas.pro
+                  contact@besmara.fr
                 </a>
               </li>
               <li>

@@ -22,12 +22,12 @@ export default function MentionsLegalesPage() {
             <section>
               <h2 className="font-display text-2xl font-bold text-foreground mb-3">Éditeur du site</h2>
               <p>
-                Le présent site <strong className="text-foreground">besmara.lilas.pro</strong> est édité par :
+                Le présent site <strong className="text-foreground">besmara.fr</strong> est édité par :
               </p>
               <ul className="mt-3 space-y-1 text-sm">
                 <li><strong className="text-foreground">Yoann BESMARA</strong> — Consultant IA & Automatisation</li>
                 <li>Micro-entreprise immatriculée au RCS</li>
-                <li>Email : <a href="mailto:besmara.contact@lilas.pro" className="text-accent hover:underline">besmara.contact@lilas.pro</a></li>
+                <li>Email : <a href="mailto:contact@besmara.fr" className="text-accent hover:underline">contact@besmara.fr</a></li>
                 <li>Téléphone : <a href="tel:+33252431166" className="text-accent hover:underline">02 52 43 11 66</a></li>
               </ul>
             </section>
@@ -61,8 +61,8 @@ export default function MentionsLegalesPage() {
               <p className="mt-3">
                 Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression
                 de vos données. Pour exercer ce droit, contactez-nous à{" "}
-                <a href="mailto:besmara.contact@lilas.pro" className="text-accent hover:underline">
-                  besmara.contact@lilas.pro
+                <a href="mailto:contact@besmara.fr" className="text-accent hover:underline">
+                  contact@besmara.fr
                 </a>.
               </p>
             </section>

@@ -143,7 +143,7 @@ export default function ContactPage() {
 
                 <div className="space-y-4 mb-10">
                   {[
-                    { icon: Mail, text: "besmara.contact@lilas.pro", href: "mailto:besmara.contact@lilas.pro" },
+                    { icon: Mail, text: "contact@besmara.fr", href: "mailto:contact@besmara.fr" },
                     { icon: Phone, text: "02 52 43 11 66", href: "tel:+33252431166" },
                   ].map((item) => (
                     <ScrollReveal key={item.text} delay={100}>

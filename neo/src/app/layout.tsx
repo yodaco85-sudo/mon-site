@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   verification: {
     google: "6Zy8-enVfMo5F8ADBJsAg_GJYLbefA8V2AFHE45z32Y",
   },
-  metadataBase: new URL("https://besmara.lilas.pro"),
+  metadataBase: new URL("https://besmara.fr"),
   title: {
     default: "BESMARA | IA & Automatisation pour la pêche, l'aquaculture et les TPE",
     template: "%s | BESMARA",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "BESMARA | IA & Automatisation Maritime",
     description:
       "Sites vitrines et automatisation pour TPE, artisans et acteurs de la mer.",
-    url: "https://besmara.lilas.pro",
+    url: "https://besmara.fr",
     siteName: "BESMARA",
     images: [
       {
@@ -105,10 +105,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   name: "BESMARA",
                   description:
                     "Consultant IA et automatisation pour la pêche, l'aquaculture et les TPE.",
-                  url: "https://besmara.lilas.pro",
-                  logo: "https://besmara.lilas.pro/brand/logofinal4.png",
-                  image: "https://besmara.lilas.pro/og-image.png",
-                  email: "besmara.contact@lilas.pro",
+                  url: "https://besmara.fr",
+                  logo: "https://besmara.fr/brand/logofinal4.png",
+                  image: "https://besmara.fr/og-image.png",
+                  email: "contact@besmara.fr",
                   telephone: "+33252431166",
                   address: {
                     "@type": "PostalAddress",
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {
                   "@type": "WebSite",
                   name: "BESMARA",
-                  url: "https://besmara.lilas.pro",
+                  url: "https://besmara.fr",
                 },
                 {
                   "@type": "Service",
