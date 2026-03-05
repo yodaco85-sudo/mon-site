@@ -38,9 +38,12 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xqeyzlqd", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify({
           ...form,
           source: "Landing page",
