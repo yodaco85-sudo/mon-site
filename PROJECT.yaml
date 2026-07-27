@@ -1,0 +1,10 @@
+id: mon-site
+status: deprecated
+purpose: version NEO du site vitrine Besmara, dans le sous-projet neo
+owner: Yoann
+path: W-SPACE/projects/mon site
+last_reviewed: 2026-07-19
+metadata_source: neo/DOCUMENTATION.md, neo/prd-neosite.md
+review_basis: ancienne version NEO conservée comme référence et rollback
+superseded_by: refonte-neosite
+canonical: false
