@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/mentions-legales",
     },
     sitemap: "https://besmara.fr/sitemap.xml",
+    host: "https://besmara.fr",
   };
 }

@@ -21,12 +21,9 @@ export const metadata: Metadata = {
     google: "6Zy8-enVfMo5F8ADBJsAg_GJYLbefA8V2AFHE45z32Y",
   },
   metadataBase: new URL("https://besmara.fr"),
-  title: {
-    default: "BESMARA | IA & Automatisation pour la pêche, l'aquaculture et les TPE",
-    template: "%s | BESMARA",
-  },
+  title: "BESMARA — Automatisation & IA pour la pêche et l'aquaculture",
   description:
-    "BESMARA accompagne les petites entreprises et acteurs de la mer : sites vitrines clairs, automatisation des tâches répétitives, premiers pas IA pour la pêche et l'aquaculture.",
+    "BESMARA accompagne les armements, entreprises aquacoles et TPE de la filière mer pour automatiser l'administratif, structurer leurs données et déployer des outils IA utiles.",
   keywords: [
     "BESMARA",
     "consultant IA maritime",
@@ -38,11 +35,18 @@ export const metadata: Metadata = {
     "TPE",
     "Yoann",
   ],
-  authors: [{ name: "Yoann — BESMARA" }],
+  authors: [
+    {
+      name: "Yoann Dos Santos Da Costa",
+      url: "https://besmara.fr/about",
+    },
+  ],
+  creator: "Yoann Dos Santos Da Costa",
+  publisher: "BESMARA",
   openGraph: {
-    title: "BESMARA | IA & Automatisation Maritime",
+    title: "BESMARA — Automatisation & IA pour la pêche et l'aquaculture",
     description:
-      "Sites vitrines et automatisation pour TPE, artisans et acteurs de la mer.",
+      "Des automatisations simples et des outils IA adaptés aux réalités de la pêche, de l'aquaculture et des petites entreprises.",
     url: "https://besmara.fr",
     siteName: "BESMARA",
     images: [
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BESMARA — IA & Automatisation pour la mer et les TPE",
+        alt: "BESMARA — Automatisation et intelligence artificielle pour la filière mer",
       },
     ],
     type: "website",
@@ -58,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BESMARA | IA & Automatisation Maritime",
+    title: "BESMARA — Automatisation & IA pour la filière mer",
     description:
-      "Sites vitrines et automatisation pour TPE, artisans et acteurs de la mer.",
+      "Automatiser l'administratif, structurer les données et déployer des outils IA utiles aux professionnels de la mer.",
     images: ["/og-image.png"],
   },
 };
@@ -101,54 +105,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "LocalBusiness",
+                  "@type": "Organization",
+                  "@id": "https://besmara.fr/#organization",
                   name: "BESMARA",
+                  alternateName: "BESMARA IA & Automatisation",
                   description:
-                    "Consultant IA et automatisation pour la pêche, l'aquaculture et les TPE.",
+                    "Conseil et mise en œuvre d'automatisations et d'outils IA pour la pêche, l'aquaculture et les petites entreprises.",
                   url: "https://besmara.fr",
                   logo: "https://besmara.fr/brand/logofinal4.png",
                   image: "https://besmara.fr/og-image.png",
                   email: "contact@besmara.fr",
                   telephone: "+33252431166",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressCountry: "FR",
-                  },
                   founder: {
                     "@type": "Person",
-                    name: "Yoann",
-                    jobTitle: "Fondateur & Consultant IA",
+                    "@id": "https://besmara.fr/#yoann",
                   },
+                  areaServed: {
+                    "@type": "Country",
+                    name: "France",
+                  },
+                  knowsAbout: [
+                    "automatisation des tâches administratives",
+                    "intelligence artificielle appliquée",
+                    "pêche professionnelle",
+                    "aquaculture",
+                    "traçabilité et collecte de données",
+                    "n8n",
+                  ],
                   sameAs: [
                     "https://www.linkedin.com/in/besmaracontact",
-                    "https://www.facebook.com/profile.php?id=61575195498498",
+                    "https://www.facebook.com/833411816532209",
                   ],
                 },
                 {
+                  "@type": "Person",
+                  "@id": "https://besmara.fr/#yoann",
+                  name: "Yoann Dos Santos Da Costa",
+                  jobTitle: "Fondateur de BESMARA, consultant en automatisation et IA",
+                  url: "https://besmara.fr/about",
+                  image: "https://besmara.fr/brand/profile.png",
+                  worksFor: {
+                    "@id": "https://besmara.fr/#organization",
+                  },
+                  knowsAbout: [
+                    "pêche professionnelle",
+                    "mécanique marine",
+                    "automatisation",
+                    "intelligence artificielle",
+                    "transformation numérique des TPE",
+                  ],
+                  sameAs: ["https://www.linkedin.com/in/besmaracontact"],
+                },
+                {
                   "@type": "WebSite",
+                  "@id": "https://besmara.fr/#website",
                   name: "BESMARA",
                   url: "https://besmara.fr",
+                  publisher: {
+                    "@id": "https://besmara.fr/#organization",
+                  },
+                  inLanguage: "fr-FR",
                 },
                 {
                   "@type": "Service",
+                  "@id": "https://besmara.fr/services#site-vitrine",
                   name: "Site Vitrine Pro",
-                  provider: { "@type": "LocalBusiness", name: "BESMARA" },
+                  provider: { "@id": "https://besmara.fr/#organization" },
                   description:
                     "Création de sites vitrines professionnels pour TPE et acteurs de la mer.",
                   areaServed: "FR",
                 },
                 {
                   "@type": "Service",
+                  "@id": "https://besmara.fr/services#automatisation",
                   name: "Automatisation",
-                  provider: { "@type": "LocalBusiness", name: "BESMARA" },
+                  provider: { "@id": "https://besmara.fr/#organization" },
                   description:
                     "Automatisation des tâches répétitives avec n8n pour les petites entreprises.",
                   areaServed: "FR",
                 },
                 {
                   "@type": "Service",
+                  "@id": "https://besmara.fr/automatisation-peche-aquaculture#service",
                   name: "IA Maritime",
-                  provider: { "@type": "LocalBusiness", name: "BESMARA" },
+                  provider: { "@id": "https://besmara.fr/#organization" },
                   description:
                     "Accompagnement IA pour la pêche et l'aquaculture : tableaux de bord, collecte de données, traçabilité.",
                   areaServed: "FR",

@@ -55,6 +55,8 @@ export default function Footer() {
               {[
                 { name: "À propos", href: "/about" },
                 { name: "Solutions", href: "/services" },
+                { name: "Expertise pêche & aquaculture", href: "/automatisation-peche-aquaculture" },
+                { name: "Guide pratique", href: "/ressources/guide-automatisation-peche-aquaculture" },
                 { name: "Projets", href: "/#projects" },
                 { name: "Contact", href: "/contact" },
               ].map((link) => (

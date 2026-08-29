@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Accueil", path: "/" },
   { name: "À propos", path: "/about" },
   { name: "Solutions", path: "/services" },
+  { name: "Expertise mer", path: "/automatisation-peche-aquaculture" },
   { name: "Projets", path: "/#projects" },
 ];
 
@@ -57,7 +58,7 @@ export default function Navbar() {
               </a>
             ))}
             <Button variant="accent" size="sm" className="ml-4" asChild>
-              <a href="#contact">Contact</a>
+              <a href="/contact">Contact</a>
             </Button>
           </div>
 
@@ -86,7 +87,7 @@ export default function Navbar() {
                 </a>
               ))}
               <Button variant="accent" className="mt-4 w-full" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Contact
                 </a>
               </Button>

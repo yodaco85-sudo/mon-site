@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -8,6 +9,11 @@ import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WaveSeparator from "@/components/WaveSeparator";
+import EntitySummary from "@/components/EntitySummary";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://besmara.fr" },
+};
 
 export default function Home() {
   return (
@@ -18,6 +24,7 @@ export default function Home() {
         {/* Hero → About : fond background */}
         <WaveSeparator fromColor="hsl(220 56% 23%)" toColor="hsl(210 40% 98%)" />
         <About />
+        <EntitySummary />
         {/* About → Offers : muted */}
         <WaveSeparator fromColor="hsl(210 40% 98%)" toColor="hsl(210 30% 96%)" />
         <Offers />
