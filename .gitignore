@@ -1,0 +1,14 @@
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.chrome-profile/
+.edge-profile/
+*.log
+desktop.ini
+Thumbs.db
+.DS_Store

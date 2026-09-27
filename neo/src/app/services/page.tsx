@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WaveSeparator from "@/components/WaveSeparator";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { BookingButton } from "@/components/BookingButton";
 import { Monitor, Settings, Waves, ChevronRight, Check } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -183,11 +184,9 @@ export default function ServicesPage() {
                 Un appel de 20 minutes suffit souvent pour clarifier les choses.
                 C&apos;est gratuit, sans engagement.
               </p>
-              <Button variant="hero" size="lg" asChild>
-                <Link href="/contact">
-                  Réserver un appel gratuit <ChevronRight className="ml-1" />
-                </Link>
-              </Button>
+              <BookingButton variant="hero" size="lg">
+                Réserver un appel gratuit <ChevronRight className="ml-1" />
+              </BookingButton>
             </ScrollReveal>
           </div>
         </section>

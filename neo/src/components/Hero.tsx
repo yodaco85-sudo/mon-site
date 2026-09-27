@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { BookingButton } from "./BookingButton";
 import { ScrollReveal } from "./ScrollReveal";
 import { ChevronRight } from "lucide-react";
 
@@ -155,12 +156,10 @@ export default function Hero() {
 
             <ScrollReveal delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button variant="hero" size="lg" asChild>
-                  <Link href="#contact">
-                    Réserver un appel gratuit
-                    <ChevronRight className="ml-1" />
-                  </Link>
-                </Button>
+                <BookingButton variant="hero" size="lg">
+                  Réserver un appel gratuit
+                  <ChevronRight className="ml-1" />
+                </BookingButton>
                 <Button variant="hero-outline" size="lg" asChild>
                   <Link href="#projects">Voir les projets →</Link>
                 </Button>

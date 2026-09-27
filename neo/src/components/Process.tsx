@@ -1,7 +1,7 @@
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
-import { Button } from "./ui/button";
+import { BookingButton } from "./BookingButton";
 import { ArrowRight } from "lucide-react";
 
 const steps = [
@@ -93,12 +93,10 @@ export default function Process() {
 
         <ScrollReveal delay={400}>
           <div className="mt-20 text-center">
-            <Button variant="hero" size="xl" asChild>
-              <a href="#contact">
-                Commencer par l&apos;appel gratuit
-                <ArrowRight className="ml-2" />
-              </a>
-            </Button>
+            <BookingButton variant="hero" size="xl">
+              Commencer par l&apos;appel gratuit
+              <ArrowRight className="ml-2" />
+            </BookingButton>
           </div>
         </ScrollReveal>
       </div>
